@@ -1,14 +1,13 @@
 {
   "name": "video-info",
   "version": "1.0.0",
-  "description": "",
-  "main": "getInfo.js",
+  "description": "Returns the most common data in a video of the most used players",
+  "main": "main.js",
   "scripts": {
-    "start": "nodemon --exec babel-node main",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babel-node main"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["video info", "youtube", "vimeo"],
+  "author": "Woodsphreaker",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.18.0",
