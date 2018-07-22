@@ -21,13 +21,16 @@ processAllList(data)
 
 // #### sequential process ####
 const processAllListSeq = (data) =>
-  data.reduce((acc, {vURL}) => {
-    return acc.then(store => {
-      return getVideoAttributesByUrl(vURL).then(res => {
-        return store.concat(res)
-      })
-    })
-  }, Promise.resolve([]))
+  data.reduce((acc, {vURL}) =>
+    acc.then(store =>
+      getVideoAttributesByUrl(vURL).then(res =>
+        store.concat(res)
+      )
+    ), Promise.resolve([]))
 
 processAllListSeq(data)
+  .then(res => log(res))
+
+// #### just one registry ###
+getVideoAttributesByUrl('https://vimeo.com/47483575')
   .then(res => log(res))
